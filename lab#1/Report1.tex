@@ -21,8 +21,8 @@
   \textsc{\large Technical University of Moldova}\\[1.2cm] % Name of your university/college
   \vspace{25 mm}
 
-  \textsc{\Large }\\[0.5cm] % Major heading such as course name
-  \textsc{\large Laboratory work \#X}\\[0.5cm] % Minor heading such as course title
+  \textsc{\Large Analysis of Object-Oriented Modeling}\\[0.5cm] % Major heading such as course name
+  \textsc{\large Laboratory work \#1}\\[0.5cm] % Minor heading such as course title
   %\textsc{\large Laboratory work}\\[0.5cm] % Minor heading such as course title
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
@@ -32,7 +32,7 @@
   %----------------------------------------------------------------------------------------
   \vspace{10 mm}
   \HRule \\[0.4cm]
-  { \LARGE \bfseries Lab title  }\\[0.4cm] % Title of your document
+  { \LARGE \bfseries Project description. User Story. Entities and Relations. }\\[0.4cm] % Title of your document
   \HRule \\[1.5cm]
 
   %----------------------------------------------------------------------------------------
@@ -43,14 +43,14 @@
       \begin{minipage}{0.4\textwidth}
       \begin{flushleft} \large
       \emph{Authors:}\\
-      Name \textsc{SURNAME}
+      Cernei \textsc{Liviu}
       \end{flushleft}
       \end{minipage}
       ~
       \begin{minipage}{0.4\textwidth}
       \begin{flushright} \large
       \emph{Supervisor:} \\
-      Mihai \textsc{Coșleț} % Supervisor's Name
+      Mihail \textsc{Gavrilița} % Supervisor's Name
       \end{flushright}
       \end{minipage}\\[4cm]
 
@@ -92,68 +92,91 @@
 
 \phantomsection
 \addcontentsline{toc}{section}{Introduction}
-\section*{Laboratory work \#X}
+\section*{Laboratory work \#1}
 \phantomsection
 
-\section{Purpose of the laboratory}
-Gain knowledge about basics of event-driven programming, understanding of window’s class and basic possibilities of Win32 API. Also she will try to understand and process OS messages.
-\section{Laboratory Work Requirements}
+% \section{Purpose of the laboratory}
+% Gain knowledge about basics of event-driven programming, understanding of window’s class and basic possibilities of Win32 API. Also she will try to understand and process OS messages.
+\section{Tasks}
 \begin{itemize}
-	\item \textbf{Mandatory Objectives}
-	      \begin{itemize}
-		      \item Choose a \textit{Programming Style Guideline} that you'll follow
-		      \item Create a \textbf{Windows application}
-		      \item Add 2 \texttt{buttons} to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
-		      \item Add 2 \texttt{text} elements to window: one with default styles, one with custom styles (size, background, text color, font family, font size) \textit{[one of them should be something funny]}
-		      \item On windows resize, one of the \texttt{text}s should "reflow" and be in window's center (vertically and horizontally)
-	      \end{itemize}
-	\item \textbf{Objectives With Points:}
-	      \begin{itemize}
-		      \item \texttt{(1pt)} Add 2 text inputs to window: one with default styles, one with custom styles (size, background, text color, font family, font size)
-		      \item \texttt{(1pt)} Make elements to fit window on resize \textit{(hint: you can limit minimal window width and height)}
-		      \item \texttt{(0-2pt)}Make elements to interact or change other elements (\texttt{1pt} each different interactions) \textit{(ex. on button click, change text element color or position)}
-		      \item \texttt{(1pt)} Change behavior of different window actions (at least 3). For ex.: on clicking close button, move window to a random location on display's working space
-		      \item \texttt{(1pt)} Write your own PSG (you can take existent one and modify it) and argue why it is better (for you)
-	      \end{itemize}
+	\item
+	Describe your project (at least 1/2 A4 paper);
+	\item 
+	Give several user stories.
 \end{itemize}
 
+\section{Theory}
+\subsection{Types of entities}
+\begin{enumerate}  
+	\item Structure
+	\begin{enumerate}  
+		\item Class
+		\item Interface
+		\item Use case
+		\item Collaboration
+		\item Active class
+		\item Component
+		\item Node 
+	\end{enumerate}
+	\item Behaviour
+	\begin{enumerate}  
+		\item Interaction
+		\item Automate
+	\end{enumerate}
+	\item Grouping (package)
+	\item Adnotation (note)
+\end{enumerate}
+
+\subsection{Types of relations}
+\begin{enumerate}  
+	\item Dependence
+	\item Asociation
+	\begin{enumerate}  
+		\item Agregation
+		\item Composition
+	\end{enumerate}
+	\item Generalization
+	\item Realization 
+\end{enumerate}
+
+\section{Description of the project}
+The new \textbf{St. Courses} platform is a great place to learn new skills and boost your knowledge. It provides a web based interaction between students and teachers. Because of it's simplicity and security, it can be used by schools and universities. On St. Courses, the user gets personalized help in order to customize his online classes.
+The website is very user-friendly, engaging and easy to use. It also has a customizable front-end, advanced analytics and much more.
+
+The platform is populated by 3 kinds of actors: administrators, teachers and students.
+
+\textbf{Courses:}
+A course has a title, description and content. It is placed in time by the start date and end date. It is created by a teacher and can have enroled students.
+The content is structured in chapters and can contain text, images and interactive elements.
+Every teacher who logged in can create and edit a course. To delete it, he must complete a request to an administrator, containing the cause of removal.
+
+\textbf{Tests:}
+The teacher optionally can create a test to evaluate the quality of the course. For this he must fill in the questions, provide the coorect answers and create an grading system.
+For the student, a test is obligatory. At the end of the course the students get marks based on their activity.
+
+\textbf{Feedback/Reporting:}
+Both teachers and students can give feedback which wil be assigned to the course history. Also, they can report bad behaviour / inappropriate language / fake content, etc. Each reportmust be resolved by an administrator.
+
+\textbf{Enrolment to a course:}
+The courses are free, meaning that everyone with an account can enrol to any corse. However, there are recomended courses, based on age, fields of interest, difficulty level.
+A student can lose access to a course if he unenroled himself, or the teacher removed him.
+In both cases the student loses the progress, tests, marks gained in that course.
+
+\textbf{Invitations:}
+A teacher can send invitations to a course. The invited students will be enroled automatically. With this method the teacher can assemble an real-life grop and assure access to the course for them.
+
+\subsection* {User stories:}
+\begin{itemize}
+	\item
+	An administrator (moderator) is responsible for handling reports, removal of inapropriate content, offering technical support.
+	\item 
+	A teacher can create a new course, edit an existing one, approve or reject an student to a course, create tests.
+	\item
+	A student can enrol to a course, read the material, unenrol from a course, pass a test, give feedback.
+\end{itemize}
+
+\
 \clearpage
 \cleardoublepage
 
-\section{Laboratory work implementation}
-
-\subsection{Tasks and Points}
-
-Here should be the list of the implemented tasks.
-
-\subsection{Laboratory work analysis}
-
-Add link to your repository.
-Create a README.md file for each laboratory work you submit. It should include the tasks that you had been implemented.
-Explain the features that you had been added to your window.
-
-\subsection{Prove your work with screens}
-
-Should be added 1 pic/screen for each implemented functionality.
-
-\clearpage
-\cleardoublepage
-
-\phantomsection
-\addcontentsline{toc}{section}{Conclusion}
-\section*{Conclusion}
-\phantomsection
-
-Vivamus sed auctor quam, id posuere leo. Quisque sed posuere est. Phasellus ut ornare arcu. Mauris volutpat nunc arcu, quis porta ante blandit et. Nam eu nisl in ipsum auctor tristique at eget tortor. Mauris bibendum luctus turpis. Etiam sed urna ac purus pharetra maximus quis vitae tortor. Proin bibendum ante lorem, ut vestibulum tellus tempor in. Nam nec aliquam magna. Pellentesque aliquet scelerisque nunc, nec pretium dui ultrices at. Donec tempor sem vitae sapien bibendum rhoncus. Donec mollis, nulla non feugiat lobortis, justo tortor mattis enim, non placerat justo nibh vel dui. Maecenas nec justo et dui scelerisque eleifend nec nec elit. Phasellus ornare semper nibh et pellentesque. Etiam arcu nunc, tempor id ultrices eget, faucibus non neque. Donec ut sem quis dolor dictum elementum eu sit amet ipsum.
-
-Aliquam sed sem eu massa tincidunt tincidunt. Praesent aliquam libero metus, et dictum mauris tincidunt vitae. Quisque interdum vulputate interdum. Suspendisse ut molestie erat. Aliquam a erat elementum odio blandit ornare vel at ante. Nam venenatis sagittis mi eget tempus. Pellentesque nibh ligula, suscipit vitae lorem et, vestibulum tincidunt nibh. In venenatis sollicitudin augue non fermentum. Ut sollicitudin eget nisl non cursus. Cras mattis nisi id justo consequat posuere. Duis gravida gravida tortor in aliquet.
-
-\clearpage
-\cleardoublepage
-
-\cleardoublepage
-% \addcontentsline{toc}{section}{References}
-% \input{biblio.tex}
-\cleardoublepage
-   
 \end{document}
