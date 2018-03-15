@@ -1,0 +1,15 @@
+@startuml
+actor :Teacher: as A
+
+A --> (Login)
+A --> (Logout)
+A --> (Register)
+A -> (Manage \n course)
+A --> (Invite \n student)
+A --> (Provide \n feedback)
+A --> (Give a \n mark)
+(create \n course) .up.> (Manage \n course) : 'ext'
+(remove \n course) .up.> (Manage \n course) : 'ext'
+(edit \n course) .up.> (Manage \n course) : 'ext'
+(create \n test) .up.> (Manage \n course) : 'ext'
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+actor :Admin: as A
+
+A --> (Login)
+A --> (Logout)
+A --> (Delete \n account)
+A --> (Manage \n courses)
+A --> (Handle \n reports)
+(mark as \n resolved) .up.> (Handle \n reports) : 'ext'
+(remove \n report) .up.> (Handle \n reports) : 'ext'
+
+(modify \n course) .up.> (Manage \n courses) : 'ext'
+(remove \n course) .up.> (Manage \n courses) : 'ext'
+
+(Delete \n account) <|-- (delete \n student)
+(Delete \n account) <|-- (delete \n teacher)
+
+
+@enduml
