@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor __Teacher: User__ as user
+participant __Course Service: Web__ as cs
+database __Courses Database: DB__ as db
+
+user -> cs: click <New Course>
+activate cs
+cs ->> cs: check authorization
+cs -->> user: success
+user ->> cs: input title
+user ->> cs: input description
+user ->> cs: upload content
+user -> cs: click <Submit>
+cs ->> cs: chek input
+cs -> db: add new course
+activate db
+db -->> cs: success
+deactivate db
+cs -->> user: new course created
+deactivate cs
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+autonumber
+actor __Student: User__ as user
+participant __Feedback Service: Web__ as fs
+database __Feedback Database: DB__ as db
+
+user -> fs: click <Give Feedback>
+activate fs
+fs ->> fs: check if user took this course
+fs -->> user: success
+user ->> fs: evaluate by lectures
+user ->> fs: evaluate by labs
+user ->> fs: evaluate by teacher competence
+user ->> fs: grade the course(0-10)
+user ->> fs: additional notes
+user ->> fs: suggestions
+
+user -> fs: click <Submit>
+fs ->> fs: chek fields
+fs -> db: add feedback
+activate db
+db -->> fs: success
+fs -> db: calculate average mark
+db --> fs: success
+deactivate db
+fs -->> user: feedback submitted
+fs ->> user: average mark
+deactivate fs
+
+@enduml

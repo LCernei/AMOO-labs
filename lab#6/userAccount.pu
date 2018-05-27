@@ -1,0 +1,13 @@
+@startuml
+
+[*] --> New
+New --> Suspended: [isNotVerified]
+New --> Closed: [isRejected]
+New --> Active : [isVerified]
+Active --> Suspended: [deltaLogin > 2 years]
+Suspended --> Active: [isVerified]
+Active --> Closed
+Suspended --> Closed: [time > 1 month]
+Closed --> [*]
+
+@enduml

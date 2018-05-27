@@ -1,0 +1,31 @@
+@startuml
+
+start
+:Input;
+fork
+	:Login;
+fork again
+	:Password;
+end fork
+
+:i = 0;
+
+while (Wrong credentials)  is (Yes)
+    :i++;
+    if (i > 3) then
+        :Require Captcha;
+    else (false)
+    endif
+    :Input;
+    fork
+    	:Login;
+    fork again
+    	:Password;
+    end fork
+endwhile (No)
+
+:Login;
+
+stop
+
+@enduml

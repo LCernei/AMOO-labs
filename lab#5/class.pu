@@ -1,0 +1,83 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+package User {
+  class User{
+      +name:String
+      +surname:String
+      +birthday:Date
+  }
+  class Admin{
+  +manageUser(u:User):bool
+  +manageCourse(c:Course)
+
+  }
+  class Student{
+    +getRegisteredCourses():List<Course>
+    +enrollToCourse(c:Course):bool
+    +unenrollFromCourse(c:Course):bool
+  }
+  class Teacher{
+    +createCourse(c:Course):bool
+    +removeCourse(c:Course):bool
+    +getCreatedCourses():List<Course>
+    +inviteStudent(s:Student):bool
+    +removeStudent(s:Student):bool
+  }
+}
+
+package Course{
+  class Course{
+  +title:String
+  +description:String
+  +teacher:Teacher
+  -files:List<File>
+  -getRegisteredStudents():List<Student>
+  -addFeedback(f:Feedback)
+  }
+  class Feedback{
+  -byLecture:int
+  -byLabs:int
+  -byCourse:int
+  -byTeacher:int
+  -additionalNotes:String
+  -suggestions:String
+  +calculateMark():float
+  }
+}
+
+package Web {
+  class UserService{
+  +login(u:User):bool
+  +logout(u:User):bool
+  +register(u:User):bool
+  +editProfile(u:user):bool
+  +checkUser(u:User):bool
+  }
+  class CourseService{
+  +createCourse(c:Course):bool
+  +editCourse(c:Course):bool
+  +removeCourse(c:Course):bool
+  +checkCourse(c:Course):bool
+  }
+  class FeedbackService{
+  +createFeedback(f:Feedback):bool
+  +checkFeedback(f:Feedback):bool
+  +getAverage(c:Course):float
+  }
+}
+
+User <|-up- Admin
+User <|-up- Student
+User <|-up- Teacher
+
+Course o-- Feedback
+
+Course ..> Teacher
+Student ..> Teacher
+Feedback ..> Student
+Course ..> CourseService
+Feedback ..> FeedbackService
+User ..> UserService
+
+@enduml

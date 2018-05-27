@@ -1,0 +1,15 @@
+@startuml
+State "New Query" as New
+State "Not Found" as NotFound
+
+[*] --> New
+New --> Found: [courseExists]
+New --> NotFound: [courseInexistent]
+New --> Invalid : [incorect input]
+Invalid --> End
+Found --> End
+NotFound --> End
+End --> New: New search
+End --> [*]
+
+@enduml

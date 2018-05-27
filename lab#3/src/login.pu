@@ -1,0 +1,19 @@
+@startuml
+autonumber
+actor "__: User__" as user
+participant "__User Service: Web__" as us
+database "__Users Database: DB__" as db
+
+user ->> us: input username
+activate us
+user ->> us: input password
+user -> us: click login
+us ->> us: chek input
+us -> db: query the user
+activate db
+db -->> us: success
+deactivate db
+us -->> user: authentication successful
+deactivate us
+
+@enduml

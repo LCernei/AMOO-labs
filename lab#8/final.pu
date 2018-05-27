@@ -1,0 +1,11 @@
+@startuml
+database DB
+[script.css] ..> [View]
+[script.js] ..> [View]
+[index.html] ..> [View]
+[View] ..> [Controller]
+[Model] ..> [Controller]
+DB ..> [Model]
+
+
+@enduml
