@@ -6,7 +6,7 @@
 \usepackage{float}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
-\graphicspath{ {images/} }
+\graphicspath{ {./} }
   
 \begin{document}
 
@@ -26,7 +26,7 @@
   \vspace{25 mm}
 
   \textsc{\Large Object-Oriented Modeling and Analysis}\\[0.5cm] % Major heading such as course name
-  \textsc{\large Laboratory work \#2}\\[0.5cm] % Minor heading such as course title
+  \textsc{\large Laboratory work \#6}\\[0.5cm] % Minor heading such as course title
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
@@ -35,7 +35,8 @@
   %----------------------------------------------------------------------------------------
   \vspace{10 mm}
   \HRule \\[0.4cm]
-  { \LARGE \bfseries Use Case Diagrams. Basic and Alternative Flow. Modeling Languages. }\\[0.4cm] % Title of your document
+  { \LARGE \bfseries Modeling your project with Statechart Diagrams. Domain Analysis. SOLID / GRASP Prin-
+ciples. }\\[0.4cm] % Title of your document
   \HRule \\[1.5cm]
 
   %----------------------------------------------------------------------------------------
@@ -95,168 +96,71 @@
 
 \phantomsection
 \addcontentsline{toc}{section}{Introduction}
-\section*{Laboratory work \#2}
+\section*{Laboratory work \#6}
 \phantomsection
 
 \section{Tasks}
 \begin{itemize}
 	\item
-	Model your application using 3 Use Case Diagrams;
+	Model your application using 3 Statechart Diagrams;
 	\item 
-	Create the basic and alternate flows of 3 most important use cases.
+	Perform the Domain analysis of your project.
 \end{itemize}
 
 \section{Theory}
-Use case diagrams are used to describe a set of actions (use cases) that some system (subject) can perform in collaboration with one or more external users of the system (actors).
 
-\subsection{Use case diagram elements}
-\begin{enumerate}  
-	\item Actor - Someone who interacts with use case (system function).
-	\item Use Case - System function (process - automated or manual)
-	\item Communication Link - a solid link which shows the participation of an actor in a use case 
-\end{enumerate}
+\subsection{SOLID / GRASP Principles.}
+\textbf{SOLID Principles are principles of class design.}
+\begin{itemize}
+	\item SRP: Single Responsibility Principle–An object should have only a single responsibility and all the responsibility should be entirely encapsulated by the class.–There should never be more than one reason for a class to change
+	\item OCP: Open/Closed Principle–Software entities should be open for extension, but closed for modification
+	\item LSP: Liskov Substituion Principle–Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program
+	\item ISP: Interface Segregation Principle–many client specific interfaces are better than one general purpose interface–once an interface has gotten too 'fat' split it into smaller and more specific interfaces so that any clients of the interface will only know about the methods that pertain to them. No client should be forced to depend on methods it does not use
+	\item DIP: Dependency Inversion Principle–Depend upon Abstractions. Do not depend upon concretions.Dependency Injection (DI) is one method of following this principle.
+\end{itemize}
 
-
-\subsection{Use Case Relationship}
-\begin{enumerate}  
-
-	\item Include
-	\begin{enumerate}
-		\item When a use case is using functionality of another use case.
-		\item An include relationship is depicted with a directed arrow having a dotted line. 
-		\item The stereotype "include" identifies the relationship as an include relationship.
-	\end{enumerate}
-	\item Extends
-	\begin{enumerate}  
-		\item Whem a use case can be divided in another use cases.
-		\item Depicted with a directed arrow having a dotted line. 
-		\item The stereotype "extends" identifies as an extend relationship
-	\end{enumerate}
-	\item Generalization
-	\begin{enumerate}  
-		\item A generalization relationship is a parent-child relationship between use cases.
-		\item The child use case in the generalization relationship can replace the parent use case.
-		\item Generalization is shown as a directed arrow with a triangle arrowhead.
-	\end{enumerate}
-\end{enumerate}
-
-\section{Use Case Diagrams}
-
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{student}
-\caption{Student Use Case diagram}
-\centering
-\end{figure}
-
-\noindent
-Login - to be able to login the student should have an account.\\
-Logout - to be able to logout, the student should be logged in.\\
-Register - the student must provide personal information (first / last name, year of study, university, faculty. group etc.).\\
-Search course - to search a course, the student can input the name of teacher or the title of the course.\\
-Enrol in course - the student selects a course, clicks the [Enrol] button and is prompted with a confirmation message.\\
-Unenroll from course - the student selects the course clicks the [Unenrol] button and is aked to confirm the operation.\\
-Provide feedback - at the bottom of the page is the "Feedback" form with a single field.\\
-Read material - the student selects a course in which he is already enroled and can start to read the content.
-
+\textbf{GRASP - Acronym for General Responsibility Assignment Software Patterns.}
+\begin{itemize}
+	\item Assigning responsibilities to classes is a critical aspect of object-oriented design.
+	\item Appropriate assignment of responsibilities to classes is the key to successful design.
+	\item There are fundamental principles in assigning responsibilities that experienced designers apply.
+	\item These principles are summarized in the GRASP patterns.
+	\item Has nine core principles that object-oriented designers apply when assigning responsibilities to classes and designing message interactions.
+\end{itemize}
 \clearpage
 
+\section{Statechart Diagrams}
+In Figure ~\ref{fig:userAccount} is represented the statechart diagram for the user account.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{teacher}
-\caption{Teacher Use Case diagram}
 \centering
+	\includegraphics[width=10cm]{userAccount}
+	\caption{User account statechart diagram}
+	\label{fig:userAccount}
 \end{figure}
 
-\noindent
-Invite student - the teacher can find a student, invite him to a course which was created by that teacher.\\
-Give a mark - the teacher can give a mark to a student enroled in one of his courses.\\
-Manage course:\\
-\tab Edit course - to edit a course it should be created in advance\\
-\tab Create test - at the end of the course, the teacher can append a test.\\
-\tab Create course - the teacher must provide a title, date and content (text, images, graphs).\\
-\tab Remove course - if the course ended, the teacher can delete it.\\
-
-\clearpage
-
+In Figure ~\ref{fig:courses} is represented the statechart diagram for courses.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{admin}
-\caption{Admin Use Case diagram}
 \centering
+	\includegraphics[width=10cm]{courses}
+	\caption{Courses statechart diagram}
+	\label{fig:courses}
 \end{figure}
 
-\noindent
-Handle reports:\\
-\tab Mark as resolved - if the feedback of a course has an alert, then it is marked as a report.\\
-\tab When the problem is eliminated, the report is resolved.\\
-\tab Remove report - if an report is fake or resolved, it can be romoved.\\
-Delete account:\\
-\tab Delete student - if a person is no longer a student, his account can be removed.
-\tab Delete teacher - if a person is no longer a teacher, his account can be removed.
+In Figure ~\ref{fig:search} is represented the statechart diagram for searching a course.
+\begin{figure}[H]
+\centering
+\includegraphics[width=10cm]{search}
+\caption{Search operation statechart diagram}
+\label{fig:search}
+\end{figure}
 
-\section{Flow of Events}
-\begin{itemize}
-\item
-\noindent\textbf{Student Use Case diagram - Enrol in course}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The student navigates to "Courses" page
-  \item 2. The student selects from the list a course
-  \item 3. The student clicks the [Enrol] button.
-  \item 4. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 1.a The student enroled to the course by a teacher, other steps are not performed.
-  \item 2.a The student inputs name of course in the search box
-\end{itemize}
 
-\clearpage
-
-\item
-\noindent\textbf{Teacher Use Case diagram - Create course}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The teacher navigates to "Courses" page
-  \item 2. The teacher clicks the [New] button.
-  \item 3. The teacher writes the title, date, content.
-  \item 4. The teacher clicks the [Save] button.
-  \item 5. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 3.a The teacher writes the title, date and imports the pdf file with the content.
-\end{itemize}
-
-\item
-\noindent\textbf{Admin Use Case diagram - Login}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The admin navigates to "Login" page
-  \item 2. The admin inputs correct username and correct password.
-  \item 3. The admin clicks the [Login] button.
-  \item 4. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 2.a The admin inputs wrong username or wrong password, fails to login but attempts one more time with correct username and correct password.
-  \item 3.a The admin presses the [Enter] key on the keyboard.
-
-\end{itemize}
-\end{itemize}
+\section{Domain analysis}
+Online courses are aimed at unlimited participation and open access via the web. In addition to traditional course materials such as filmed lectures, readings, and problem sets, many online courses provide interactive user forums to support community interactions among students, professors, and teaching assistants (TAs).\par
+Online courses are regarded by many as an important tool to widen access to Higher Education (HE) for millions of people, including those in the developing world, and ultimately enhance their quality of life. Online courses may be regarded as contributing to the democratisation of HE, not only locally or regionally but globally as well. Online courses can help democratise content and make knowledge reachable for everyone. Students are able to access complete courses offered by universities all over the world, something previously unattainable. With the availability of affordable technologies, online courses increase access to an extraordinary number of courses offered by world-renowned institutions and teachers.\par
+There are already similar platforms. "Coursera" emerged as the top ranked online courses platform and the best overall choice due to its impressive selection of learning pathways and course features. "edX" and "Udacity" were also found to be strong contenders.
+\section{Conclusion}
+In this laboratory work we learned to create statechart diagrams and perform domain analysis.
 
 \clearpage
 \cleardoublepage

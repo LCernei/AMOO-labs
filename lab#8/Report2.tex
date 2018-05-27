@@ -6,7 +6,7 @@
 \usepackage{float}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
-\graphicspath{ {images/} }
+\graphicspath{ {./} }
   
 \begin{document}
 
@@ -26,7 +26,7 @@
   \vspace{25 mm}
 
   \textsc{\Large Object-Oriented Modeling and Analysis}\\[0.5cm] % Major heading such as course name
-  \textsc{\large Laboratory work \#2}\\[0.5cm] % Minor heading such as course title
+  \textsc{\large Laboratory work \#8}\\[0.5cm] % Minor heading such as course title
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
@@ -35,7 +35,8 @@
   %----------------------------------------------------------------------------------------
   \vspace{10 mm}
   \HRule \\[0.4cm]
-  { \LARGE \bfseries Use Case Diagrams. Basic and Alternative Flow. Modeling Languages. }\\[0.4cm] % Title of your document
+  { \LARGE \bfseries Modeling your project with Component Diagrams. Project setup. Top-down and bottom-up
+design. }\\[0.4cm] % Title of your document
   \HRule \\[1.5cm]
 
   %----------------------------------------------------------------------------------------
@@ -95,168 +96,60 @@
 
 \phantomsection
 \addcontentsline{toc}{section}{Introduction}
-\section*{Laboratory work \#2}
+\section*{Laboratory work \#8}
 \phantomsection
 
 \section{Tasks}
 \begin{itemize}
 	\item
-	Model your application using 3 Use Case Diagrams;
+	Model your application using 3 Component Diagrams;
 	\item 
-	Create the basic and alternate flows of 3 most important use cases.
+	Describe the steps needed to setup your project.
 \end{itemize}
 
 \section{Theory}
-Use case diagrams are used to describe a set of actions (use cases) that some system (subject) can perform in collaboration with one or more external users of the system (actors).
 
-\subsection{Use case diagram elements}
-\begin{enumerate}  
-	\item Actor - Someone who interacts with use case (system function).
-	\item Use Case - System function (process - automated or manual)
-	\item Communication Link - a solid link which shows the participation of an actor in a use case 
-\end{enumerate}
-
-
-\subsection{Use Case Relationship}
-\begin{enumerate}  
-
-	\item Include
-	\begin{enumerate}
-		\item When a use case is using functionality of another use case.
-		\item An include relationship is depicted with a directed arrow having a dotted line. 
-		\item The stereotype "include" identifies the relationship as an include relationship.
-	\end{enumerate}
-	\item Extends
-	\begin{enumerate}  
-		\item Whem a use case can be divided in another use cases.
-		\item Depicted with a directed arrow having a dotted line. 
-		\item The stereotype "extends" identifies as an extend relationship
-	\end{enumerate}
-	\item Generalization
-	\begin{enumerate}  
-		\item A generalization relationship is a parent-child relationship between use cases.
-		\item The child use case in the generalization relationship can replace the parent use case.
-		\item Generalization is shown as a directed arrow with a triangle arrowhead.
-	\end{enumerate}
-\end{enumerate}
-
-\section{Use Case Diagrams}
-
-\begin{figure}[H]
-\includegraphics[width=\textwidth]{student}
-\caption{Student Use Case diagram}
-\centering
-\end{figure}
-
-\noindent
-Login - to be able to login the student should have an account.\\
-Logout - to be able to logout, the student should be logged in.\\
-Register - the student must provide personal information (first / last name, year of study, university, faculty. group etc.).\\
-Search course - to search a course, the student can input the name of teacher or the title of the course.\\
-Enrol in course - the student selects a course, clicks the [Enrol] button and is prompted with a confirmation message.\\
-Unenroll from course - the student selects the course clicks the [Unenrol] button and is aked to confirm the operation.\\
-Provide feedback - at the bottom of the page is the "Feedback" form with a single field.\\
-Read material - the student selects a course in which he is already enroled and can start to read the content.
-
+\subsection{Top-down and Bottom-up Design}
+Top-down and bottom-up are both strategies of information processing and knowledge ordering, used in a variety of fields including software, humanistic and scientific theories (see systemics), and management and organization. In practice, they can be seen as a style of thinking, teaching, or leadership.\par
+A top-down approach (also known as stepwise design and in some cases used as a synonym of decomposition) is essentially the breaking down of a system to gain insight into its compositional sub-systems in a reverse engineering fashion. In a top-down approach an overview of the system is formulated, specifying, but not detailing, any first-level subsystems. Each subsystem is then refined in yet greater detail, sometimes in many additional subsystem levels, until the entire specification is reduced to base elements. A top-down model is often specified with the assistance of "black boxes", which makes it easier to manipulate. However, black boxes may fail to clarify elementary mechanisms or be detailed enough to realistically validate the model. Top down approach starts with the big picture. It breaks down from there into smaller segments.\par
+A bottom-up approach is the piecing together of systems to give rise to more complex systems, thus making the original systems sub-systems of the emergent system. Bottom-up processing is a type of information processing based on incoming data from the environment to form a perception. From a cognitive psychology perspective, information enters the eyes in one direction (sensory input, or the "bottom"), and is then turned into an image by the brain that can be interpreted and recognized as a perception (output that is "built up" from processing to final cognition). In a bottom-up approach the individual base elements of the system are first specified in great detail. These elements are then linked together to form larger subsystems, which then in turn are linked, sometimes in many levels, until a complete top-level system is formed. This strategy often resembles a "seed" model, by which the beginnings are small but eventually grow in complexity and completeness. However, "organic strategies" may result in a tangle of elements and subsystems, developed in isolation and subject to local optimization as opposed to meeting a global purpose.\par
 \clearpage
 
+\section{Component Diagrams}
+In Figure ~\ref{fig:intermediar} is represented the component diagram for app, using the MVC pattern.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{teacher}
-\caption{Teacher Use Case diagram}
 \centering
+	\includegraphics[width=10cm]{intermediar}
+	\caption{MVC component diagram}
+	\label{fig:intermediar}
 \end{figure}
 
-\noindent
-Invite student - the teacher can find a student, invite him to a course which was created by that teacher.\\
-Give a mark - the teacher can give a mark to a student enroled in one of his courses.\\
-Manage course:\\
-\tab Edit course - to edit a course it should be created in advance\\
-\tab Create test - at the end of the course, the teacher can append a test.\\
-\tab Create course - the teacher must provide a title, date and content (text, images, graphs).\\
-\tab Remove course - if the course ended, the teacher can delete it.\\
-
-\clearpage
-
+In Figure ~\ref{fig:final} is represented the component diagram for the app, after compiling, minifiing scripts.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{admin}
-\caption{Admin Use Case diagram}
 \centering
+	\includegraphics[width=10cm]{final}
+	\caption{Compiled files component diagram}
+	\label{fig:final}
 \end{figure}
 
-\noindent
-Handle reports:\\
-\tab Mark as resolved - if the feedback of a course has an alert, then it is marked as a report.\\
-\tab When the problem is eliminated, the report is resolved.\\
-\tab Remove report - if an report is fake or resolved, it can be romoved.\\
-Delete account:\\
-\tab Delete student - if a person is no longer a student, his account can be removed.
-\tab Delete teacher - if a person is no longer a teacher, his account can be removed.
+\section{Project Setup}
+The last step of website development is deployment. The process of“getting your website on the web” consists of a number of steps:
 
-\section{Flow of Events}
 \begin{itemize}
+	\item
+	Finding a domain name
 \item
-\noindent\textbf{Student Use Case diagram - Enrol in course}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The student navigates to "Courses" page
-  \item 2. The student selects from the list a course
-  \item 3. The student clicks the [Enrol] button.
-  \item 4. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 1.a The student enroled to the course by a teacher, other steps are not performed.
-  \item 2.a The student inputs name of course in the search box
-\end{itemize}
-
-\clearpage
-
+	Finding a hosting service
 \item
-\noindent\textbf{Teacher Use Case diagram - Create course}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The teacher navigates to "Courses" page
-  \item 2. The teacher clicks the [New] button.
-  \item 3. The teacher writes the title, date, content.
-  \item 4. The teacher clicks the [Save] button.
-  \item 5. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 3.a The teacher writes the title, date and imports the pdf file with the content.
+	Uploading files with SFTP
+	\item 
+	Deploying server-side applications
 \end{itemize}
 
-\item
-\noindent\textbf{Admin Use Case diagram - Login}
-\begin{description}
-    \item[Success scenario:]
-\end{description}
-\renewcommand{\labelenumii}{\arabic{enumii}}
-\begin{itemize}
-  \item 1. The admin navigates to "Login" page
-  \item 2. The admin inputs correct username and correct password.
-  \item 3. The admin clicks the [Login] button.
-  \item 4. The system outputs success message.
-\end{itemize}
-\begin{description}
-    \item[Alternate flow:]
-\end{description}
-\begin{itemize}
-  \item 2.a The admin inputs wrong username or wrong password, fails to login but attempts one more time with correct username and correct password.
-  \item 3.a The admin presses the [Enter] key on the keyboard.
+But the client is not required to download or install anything. He simply navigates to the webpage. The only step he should take is to create an account.
 
-\end{itemize}
-\end{itemize}
+\section{Conclusion}
+In this laboratory work we learned to create component diagrams and explain Project Setup.
 
 \clearpage
 \cleardoublepage
