@@ -131,28 +131,30 @@ ments. Conceptual Object Oriented Analysis. Technical Object Oriented Design. }\
 \section{Sequence Diagrams}
 In Figure ~\ref{fig:login} is represented the sequence diagram for the login operation.
 \begin{figure}[H]
+	\centering
 	\includegraphics[width=\textwidth]{login}
 	\caption{Login sequence diagram}
-	\centering
 	\label{fig:login}
 \end{figure}
+We observe the sequence of operations needed to login any user: student, teacher, or even admin. It is a generalized operation, thats why I used an anonymous calss. The user inputs username and password, the user service check it and sends the information further to the database. The database returns an "success" message, which is propagated to the user by the service. This is the case when all information was correct, and results with the user authenticated.\par
 
 In Figure ~\ref{fig:create} is represented the sequence diagram for creation of a new course.
 \begin{figure}[H]
+	\centering
 	\includegraphics[width=\textwidth]{create}
 	\caption{New course sequence diagram}
-	\centering
 	\label{fig:create}
 \end{figure}
+This diagram is specifically for the teacher. In order to create a course, the teacher should have assignet a special authorization key. If it is found, he can begin to input the course information. When submitted, it is checked for invalid fields, then it is sent to the course database. In case of success the teacher is announced through the course service.
 
 In Figure ~\ref{fig:feedback} is represented the sequence diagram for giving feedback for a course.
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{feedback}
 \caption{Feedback sequence diagram}
-\centering
 \label{fig:feedback}
 \end{figure}
-
+To be eligible to give feedback, the studnt should have already completed the course. If the condition is satisfied, he can fill the form. After submission, all fields are checked and the information is sent to the database. After a "success" message, the feedback service requests the average mark for that course. Then the student receives an acceptance message and can see the overall quality of the course.
 
 \section{Functional and Non-Functional Requirements}
 \subsection{Functional}

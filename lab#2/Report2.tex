@@ -141,56 +141,38 @@ Use case diagrams are used to describe a set of actions (use cases) that some sy
 \end{enumerate}
 
 \section{Use Case Diagrams}
-
+In Figure ~\ref{fig:student} is represented the Use Case diagram for the actor "student".
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{student}
 \caption{Student Use Case diagram}
-\centering
+\label{fig:student}
 \end{figure}
 
-\noindent
-Login - to be able to login the student should have an account.\\
-Logout - to be able to logout, the student should be logged in.\\
-Register - the student must provide personal information (first / last name, year of study, university, faculty. group etc.).\\
-Search course - to search a course, the student can input the name of teacher or the title of the course.\\
-Enrol in course - the student selects a course, clicks the [Enrol] button and is prompted with a confirmation message.\\
-Unenroll from course - the student selects the course clicks the [Unenrol] button and is aked to confirm the operation.\\
-Provide feedback - at the bottom of the page is the "Feedback" form with a single field.\\
-Read material - the student selects a course in which he is already enroled and can start to read the content.
+In order to be able to login the student should have an account. Also, to logout the student should firstly login. Another case is the registration - the student must provide personal information (first / last name, year of study, university, faculty. group etc.). After registration, the user searches a course, the student can input the name of teacher or the title of the lecture.\par
+Enrolment in a course is performed by selecting a course, clicking the [Enrol] button and accepting the confirmation message. The same with the unenrollment procedure.
+Finally, the student selects a course in which he is already enroled and can start reading the content.
+At the bottom of the page the student also can find the "Feedback" form.
 
-\clearpage
-
+In Figure ~\ref{fig:teacher} is represented the Use Case diagram for the actor "teacher".
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{teacher}
 \caption{Teacher Use Case diagram}
-\centering
+\label{fig:teacher}
 \end{figure}
+The teacher has access like the student user, but with additional privileges. He invite a student to one of his own courses. The teacher is responsible for giving marks or evaluating the student at the end of course.\par
+Also, the techer is in control of the content of the course - we can say that he can perform "CRUD" operations on his own courses.
 
-\noindent
-Invite student - the teacher can find a student, invite him to a course which was created by that teacher.\\
-Give a mark - the teacher can give a mark to a student enroled in one of his courses.\\
-Manage course:\\
-\tab Edit course - to edit a course it should be created in advance\\
-\tab Create test - at the end of the course, the teacher can append a test.\\
-\tab Create course - the teacher must provide a title, date and content (text, images, graphs).\\
-\tab Remove course - if the course ended, the teacher can delete it.\\
-
-\clearpage
-
+In Figure ~\ref{fig:admin} is represented the Use Case diagram for the actor "administrator".
 \begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{admin}
 \caption{Admin Use Case diagram}
-\centering
+\label{fig:admin}
 \end{figure}
 
-\noindent
-Handle reports:\\
-\tab Mark as resolved - if the feedback of a course has an alert, then it is marked as a report.\\
-\tab When the problem is eliminated, the report is resolved.\\
-\tab Remove report - if an report is fake or resolved, it can be romoved.\\
-Delete account:\\
-\tab Delete student - if a person is no longer a student, his account can be removed.
-\tab Delete teacher - if a person is no longer a teacher, his account can be removed.
+The administrator can do almost everything he wants. He can manage courses from any teacher, can remove any accounts. Also he is responsible for handling reports.
 
 \section{Flow of Events}
 \begin{itemize}
@@ -213,8 +195,6 @@ Delete account:\\
   \item 1.a The student enroled to the course by a teacher, other steps are not performed.
   \item 2.a The student inputs name of course in the search box
 \end{itemize}
-
-\clearpage
 
 \item
 \noindent\textbf{Teacher Use Case diagram - Create course}

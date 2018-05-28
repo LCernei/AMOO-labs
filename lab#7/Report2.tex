@@ -115,13 +115,15 @@ Some people consider a life-cycle "model" a more general term for a category of 
 \clearpage
 
 \section{Activity Diagrams}
-In Figure ~\ref{fig:login} is represented the activity diagram for the user account.
+In Figure ~\ref{fig:login} is represented the activity diagram for user login.
 \begin{figure}[H]
 \centering
 	\includegraphics[width=5cm]{login}
 	\caption{Login activity diagram}
 	\label{fig:login}
 \end{figure}
+To login in an account, the user inputs login and password in any order. Then the input is submitted. If the credentials are right, the user is authenticated successfully. Otherwise, it should try again. If the third attempt is unsuccessful, he is requested to pass the captcha test. Any attempt from that moment will requre the additional test, until he inputs correct data.
+
 
 \section{Application Delivery / Installation}
 The last step of website development is deployment. The process of“getting your website on the web” consists of a number of steps:

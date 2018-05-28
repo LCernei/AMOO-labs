@@ -137,6 +137,7 @@ In Figure ~\ref{fig:userAccount} is represented the statechart diagram for the u
 	\caption{User account statechart diagram}
 	\label{fig:userAccount}
 \end{figure}
+Initially all accounts are new (initialization). Those who had valid usernames and passwords, receive a notification by mail. Other ones are rejected, then closed. If the user does not verify the account, it becomes suspended. Suspenden accounts can become active if are verified in less than a month, else they are also closed. An active account with an "Offline" status more than 2 years, becomes supended and receives a new mail notification. Closed accounts have the final state.
 
 In Figure ~\ref{fig:courses} is represented the statechart diagram for courses.
 \begin{figure}[H]
@@ -145,6 +146,7 @@ In Figure ~\ref{fig:courses} is represented the statechart diagram for courses.
 	\caption{Courses statechart diagram}
 	\label{fig:courses}
 \end{figure}
+The teacher can create new courses. If he registers some users, the course becomes active. If there are no students at the beginning, the course is inactive. If he can't attract any students in half a year, the course is closed. If the starting date was incorect, the course is also closed. But any course can be restarted, if it was marked as closed.
 
 In Figure ~\ref{fig:search} is represented the statechart diagram for searching a course.
 \begin{figure}[H]
@@ -153,7 +155,7 @@ In Figure ~\ref{fig:search} is represented the statechart diagram for searching 
 \caption{Search operation statechart diagram}
 \label{fig:search}
 \end{figure}
-
+An user who wants to search a course, creates a new query. If he inputs non-alfanumeric symbols, the result is invalidated. If the course is not found, the result is negative and a propper message appears. Otherwise, the course is found and a positive result with a success message is sent. All states then become finished.
 
 \section{Domain analysis}
 Online courses are aimed at unlimited participation and open access via the web. In addition to traditional course materials such as filmed lectures, readings, and problem sets, many online courses provide interactive user forums to support community interactions among students, professors, and teaching assistants (TAs).\par

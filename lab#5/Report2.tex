@@ -123,14 +123,13 @@ CONCEPTUAL INTEGRITY is the principle that anywhere you look in your system, you
 \section{Class Diagrams}
 In Figure ~\ref{fig:class} is represented the class diagram for the website.
 \begin{figure}[H]
+	\centering
 	\includegraphics[width=15cm]{class}
 	\caption{Class diagram}
-	\centering
 	\label{fig:class}
 \end{figure}
-
-
-
+The diagram is divided in 3 packages: User, Web, Course. The "Course package" contains the classes Feedback and Course. Feedback is part of Course, that's why they are in agregation relationship. The "User" package contains 3 classses: Admin, Teacher and Student which inherit from the User class. The Feedback depends of Student. The Stdent depends of the Teacher (enroll/unenroll). Also the Course depends of the Teacher.\par
+There is the third package, "Web". It includes FeedbackService, UserService and CourseService, each being a "dependee" for Feeback, User and Course classes respectively.
 
 \section{SWOT analysis}
 \subsection{Strengths}

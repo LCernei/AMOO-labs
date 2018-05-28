@@ -122,6 +122,14 @@ In Figure ~\ref{fig:login} is represented the collaboration diagram for the logi
 	\centering
 	\label{fig:login}
 \end{figure}
+Here we can see the interaction beween objects in our project. These diagrams are the equivalent of the previous sequence diagrams.\par
+\noindent 1 - input username;
+2 - input password;
+3 - click login;
+4 - chek input;
+5 - query the user;
+6 - success;
+7 - authentication successful;
 
 In Figure ~\ref{fig:create} is represented the collaboration diagram for creation of a new course.
 \begin{figure}[H]
@@ -130,6 +138,17 @@ In Figure ~\ref{fig:create} is represented the collaboration diagram for creatio
 	\centering
 	\label{fig:create}
 \end{figure}
+\noindent 1 - click [New Course];
+ 2 - check authorization;
+ 3 - success;
+ 4 - input title;
+ 5 - input description;
+ 6 - upload content;
+ 7 - click [Submit];
+ 8 - chek input;
+ 9 - add new course;
+10 - success;
+11 - new course created;
 
 In Figure ~\ref{fig:feedback} is represented the collaboration diagram for giving feedback for a course.
 \begin{figure}[H]
@@ -138,7 +157,23 @@ In Figure ~\ref{fig:feedback} is represented the collaboration diagram for givin
 \centering
 \label{fig:feedback}
 \end{figure}
-
+\noindent 1 - click [Give Feedback];
+ 2 - check if user took this course;
+ 3 - success;
+ 4 - evaluate by lectures;
+ 5 - evaluate by labs;
+ 6 - evaluate by teacher competence;
+ 7 - grade the course(0-10);
+ 8 - additional notes;
+ 9 - suggestions;
+10 - click [Submit];
+11 - chek fields;
+12 - add feedback;
+13 - success;
+14 - calculate average mark;
+15 - success;
+16 - feedback submitted;
+17 - average mark;
 
 \section{MVC Pattern}
 Model–view–controller is commonly used for developing software that divides an application into three interconnected parts. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. The MVC design pattern decouples these major components allowing for efficient code reuse and parallel development.\par
